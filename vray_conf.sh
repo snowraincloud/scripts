@@ -29,6 +29,6 @@ cat <<EOF
 EOF
 ) > ${file_path}
 }
-
+apt install uuid-runtime
 read_conf
 to_file
