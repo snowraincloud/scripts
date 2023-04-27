@@ -29,6 +29,13 @@ cat <<EOF
 EOF
 ) > ${file_path}
 }
-apt install uuid-runtime
+
+function install_uuidgen
+{
+    if ![-x "$(command -v uuidgen)"]; then
+        apt install uuid-runtime
+}
+
+install_uuidgen
 read_conf
 to_file
